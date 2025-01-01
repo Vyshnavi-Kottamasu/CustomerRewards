@@ -1,11 +1,10 @@
 import './App.css';
 import React from 'react';
-import RewardsList from './RewardsList'
+import RewardsList from './components/RewardsList/RewardsList'
 
 function App() {
   return (
     <div className="App">
-      {/* <InitialRewardsProgram></InitialRewardsProgram> */}
       <RewardsList></RewardsList>
     </div>
   );

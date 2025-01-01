@@ -1,0 +1,23 @@
+{
+  "env": {
+    "browser": true,
+    "es2021": true,
+    "jest": true,
+    "node": true
+  },
+  "extends": [
+    "eslint:recommended",
+    "plugin:react/recommended",
+    "plugin:jest/recommended"
+  ],
+  "parserOptions": {
+    "ecmaVersion": 12,
+    "sourceType": "module"
+  },
+  "plugins": ["react", "jest"],
+  "rules": {
+    "jest/no-disabled-tests": "warn", // Warn about skipped tests
+    "jest/no-focused-tests": "error", // Error on `.only` in tests
+    "jest/no-identical-title": "error" // Error if test titles are duplicated
+  }
+}
