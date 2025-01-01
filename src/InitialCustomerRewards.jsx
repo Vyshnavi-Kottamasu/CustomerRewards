@@ -1,3 +1,6 @@
+import React from 'react';
+import PropTypes from 'prop-types';
+
 const InitialCustomerRewards = ({ customer }) => {
 
     const calculatePoints = (amount) => {
@@ -31,7 +34,7 @@ const InitialCustomerRewards = ({ customer }) => {
             <h2>{customer.name}</h2>
             <table>
                 {Object.entries(monthlyRewards).map(([month, points]) => 
-                <tr>
+                <tr key={month}>
                     <td key={month}>
                         {month}: {points} points
                     </td>
@@ -41,6 +44,10 @@ const InitialCustomerRewards = ({ customer }) => {
             <strong>Total Rewards: {totalRewards} points</strong>
         </div>
     );
+};
+
+InitialCustomerRewards.propTypes = {
+    customer: PropTypes.object
 };
 
 export default InitialCustomerRewards

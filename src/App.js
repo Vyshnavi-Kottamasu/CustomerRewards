@@ -1,5 +1,5 @@
 import './App.css';
-import InitialRewardsProgram from './InitialRewardsProgram';
+import React from 'react';
 import RewardsList from './RewardsList'
 
 function App() {

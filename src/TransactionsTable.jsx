@@ -1,4 +1,5 @@
-
+import React from 'react';
+import PropTypes from 'prop-types';
 
 const TransactionsTable = ({ transactions }) => (
     <div>
@@ -29,5 +30,9 @@ const TransactionsTable = ({ transactions }) => (
         </table>
     </div>
 );
+
+TransactionsTable.propTypes = {
+    transactions: PropTypes.array.isRequired
+};
 
 export default TransactionsTable;
