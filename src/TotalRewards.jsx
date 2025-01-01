@@ -1,4 +1,6 @@
 
+import React from 'react';
+import PropTypes from 'prop-types';
 
 const TotalRewards = ({ totals }) => (
     <div>
@@ -21,5 +23,9 @@ const TotalRewards = ({ totals }) => (
         </table>
     </div>
 );
+
+TotalRewards.propTypes = {
+    totals: PropTypes.array.isRequired
+};
 
 export default TotalRewards;

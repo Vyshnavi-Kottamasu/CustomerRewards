@@ -1,3 +1,5 @@
+import React from 'react';
+import PropTypes from 'prop-types';
 
 const UserMonthlyRewards = ({ rewards }) => (
     <div>
@@ -26,5 +28,9 @@ const UserMonthlyRewards = ({ rewards }) => (
         </table>
     </div>
 );
+
+UserMonthlyRewards.propTypes = {
+    rewards: PropTypes.array.isRequired
+};
 
 export default UserMonthlyRewards;
