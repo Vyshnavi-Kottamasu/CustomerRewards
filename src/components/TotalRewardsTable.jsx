@@ -2,20 +2,24 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const TotalRewards = ({ totals }) => (
+const TotalRewards = ({ totalData }) => (
     <div>
-        <h2>Total Rewards</h2>
+        <h2>Quaterly Rewards</h2>
         <table border="1">
             <thead>
                 <tr>
                     <th>Customer Name</th>
+                    <th>Year</th>
+                    <th>Quarter</th>
                     <th>Reward Points</th>
                 </tr>
             </thead>
             <tbody>
-                {totals.map((total, index) => (
+                {totalData.map((total, index) => (
                     <tr key={index}>
-                        <td>{total.name}</td>
+                        <td>{total.customerName}</td>
+                        <td>{total.year}</td>
+                        <td>{total.quarter}</td>
                         <td>{total.rewardPoints}</td>
                     </tr>
                 ))}
@@ -25,7 +29,7 @@ const TotalRewards = ({ totals }) => (
 );
 
 TotalRewards.propTypes = {
-    totals: PropTypes.array.isRequired
+    totalData: PropTypes.array.isRequired
 };
 
 export default TotalRewards;

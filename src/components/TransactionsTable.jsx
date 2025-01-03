@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const TransactionsTable = ({ transactions }) => (
+const TransactionsTable = ({ transactionsData }) => (
     <div>
         <h2>Transactions</h2>
         <table border="1">
@@ -16,7 +16,7 @@ const TransactionsTable = ({ transactions }) => (
                 </tr>
             </thead>
             <tbody>
-                {transactions.map((transaction, index) => (
+                {transactionsData.map((transaction, index) => (
                     <tr key={index}>
                         <td>{transaction.transactionId}</td>
                         <td>{transaction.customerName}</td>
@@ -32,7 +32,7 @@ const TransactionsTable = ({ transactions }) => (
 );
 
 TransactionsTable.propTypes = {
-    transactions: PropTypes.array.isRequired
+    transactionsData: PropTypes.array.isRequired
 };
 
 export default TransactionsTable;

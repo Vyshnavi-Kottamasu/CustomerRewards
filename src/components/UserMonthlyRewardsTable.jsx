@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const UserMonthlyRewards = ({ rewards }) => (
+const UserMonthlyRewards = ({ monthlyData }) => (
     <div>
         <h2>User Monthly Rewards</h2>
         <table border="1">
@@ -9,16 +9,16 @@ const UserMonthlyRewards = ({ rewards }) => (
                 <tr>
                     <th>Customer ID</th>
                     <th>Name</th>
-                    <th>Month</th>
-                    <th>Year</th>
+                    <th>month</th>
+                    <th>year</th>
                     <th>Reward Points</th>
                 </tr>
             </thead>
             <tbody>
-                {rewards.map((reward, index) => (
+                {monthlyData.map((reward, index) => (
                     <tr key={index}>
                         <td>{reward.customerId}</td>
-                        <td>{reward.name}</td>
+                        <td>{reward.customerName}</td>
                         <td>{reward.month}</td>
                         <td>{reward.year}</td>
                         <td>{reward.rewardPoints}</td>
@@ -30,7 +30,7 @@ const UserMonthlyRewards = ({ rewards }) => (
 );
 
 UserMonthlyRewards.propTypes = {
-    rewards: PropTypes.array.isRequired
+    monthlyData: PropTypes.array.isRequired
 };
 
 export default UserMonthlyRewards;
