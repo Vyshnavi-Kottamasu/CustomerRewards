@@ -32,17 +32,21 @@ const RewardsProgram = () => {
           return { ...eachTransaction, rewardPoints: points };
         });
         
+        //Calculating monthly and quarterly reward points
         const monthlyRewards = {};
         const quarterlyRewards = {};
         updatedTransactions.map((eachTransaction) => {
           const date = new Date(eachTransaction.purchaseDate);
           const month = new Date(eachTransaction.purchaseDate).toLocaleString("default",{ month: "long" });
+
+          //Create a unique key in such a way that the key contains the customer details
           const monthKey = `${eachTransaction.customerName}-${date.getFullYear()}-${month}`;
           const quarterKey = `${eachTransaction.customerName}-${date.getFullYear()}-Q${Math.ceil((date.getMonth() + 1) / 3)}`;
           monthlyRewards[monthKey] = (monthlyRewards[monthKey] || 0) + eachTransaction.rewardPoints;
           quarterlyRewards[quarterKey] = (quarterlyRewards[quarterKey] || 0) + eachTransaction.rewardPoints;
         });
 
+        //Convert the Object key and values pairs into a 2D array so that you can traverse using map
         const monthlyRewardsTable = Object.entries(monthlyRewards).map(([key, rewardPoints]) => {
             const [customerName, year, month] = key.split('-');
             return {

@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 
 const TotalRewards = ({ totalData }) => (
     <div>
-        <h2>Quaterly Rewards</h2>
+        <h2>Quarterly Rewards</h2>
         <table border="1" style={{margin: "0 auto"}}>
             <thead>
                 <tr>
