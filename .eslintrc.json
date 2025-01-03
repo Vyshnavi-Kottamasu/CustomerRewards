@@ -18,6 +18,8 @@
   "rules": {
     "jest/no-disabled-tests": "warn", // Warn about skipped tests
     "jest/no-focused-tests": "error", // Error on `.only` in tests
-    "jest/no-identical-title": "error" // Error if test titles are duplicated
+    "jest/no-identical-title": "error", // Error if test titles are duplicated
+    "jest/expect-expect": "off",
+    "react/prop-types": "off"    // Example: Disable prop-types rule for React
   }
 }

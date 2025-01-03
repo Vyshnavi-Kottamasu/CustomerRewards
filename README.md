@@ -76,8 +76,7 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/t
 Project explaination:
 Fetching 3 tables, that has details of the transactions on daily basis, aggregate monthly transaction of every individual and total reward points for every customer until today respectively.
 1. Calculate the reward points for every transaction and update it in the transaction array(state variable).
-2. Now Calculate reward points on monthly basis with the transaction data.
-3. Sum all the reward points segregating based on customer name.
+2. Calculate reward points on monthly basis and quarterly basis by inserting the key value pairs into an empty object. Key being the unique value that contains all the details and value being the reward points.
 4. Installed prop-types for prop validation and ESLint for code formatting
 5. Make sure to follow the best practices mentioned.
 6. Write test cases using jest
