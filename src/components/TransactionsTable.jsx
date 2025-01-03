@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 const TransactionsTable = ({ transactionsData }) => (
     <div>
         <h2>Transactions</h2>
-        <table border="1">
+        <table border="1" style={{margin: "0 auto"}}>
             <thead>
                 <tr>
                     <th>Transaction ID</th>

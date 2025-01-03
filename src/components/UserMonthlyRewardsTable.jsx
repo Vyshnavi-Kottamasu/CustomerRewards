@@ -4,10 +4,9 @@ import PropTypes from 'prop-types';
 const UserMonthlyRewards = ({ monthlyData }) => (
     <div>
         <h2>User Monthly Rewards</h2>
-        <table border="1">
+        <table border="1" style={{margin: "0 auto"}}>
             <thead>
                 <tr>
-                    <th>Customer ID</th>
                     <th>Name</th>
                     <th>month</th>
                     <th>year</th>
@@ -17,7 +16,6 @@ const UserMonthlyRewards = ({ monthlyData }) => (
             <tbody>
                 {monthlyData.map((reward, index) => (
                     <tr key={index}>
-                        <td>{reward.customerId}</td>
                         <td>{reward.customerName}</td>
                         <td>{reward.month}</td>
                         <td>{reward.year}</td>

@@ -31,48 +31,27 @@ const RewardsProgram = () => {
           const points = calculatePoints(eachTransaction.price);
           return { ...eachTransaction, rewardPoints: points };
         });
-
-
-        //Calculating monthly reward points for each customer every month based on the transaction table's updated data
-        const rewardMonthlyData = {};
-        const updatedMonthlyRewards = updatedTransactions.reduce((uniqueRewards, eachTransaction) => {
-            const month = new Date(eachTransaction.purchaseDate).toLocaleString("default",{ month: "long" });
-            const year = new Date(eachTransaction.purchaseDate).getFullYear();
-            const cacheKey = `${eachTransaction.customerName}-${month}-${year}`; //unique key
-
-            if (!Object.keys(rewardMonthlyData).includes(cacheKey)) {
-              const monthlyPoints = updatedTransactions
-                .filter(
-                  (txn) =>
-                    txn.customerName === eachTransaction.customerName &&
-                    new Date(txn.purchaseDate).toLocaleString("default", {month: "long",}) === month &&
-                    new Date(txn.purchaseDate).getFullYear() === year
-                )
-                .reduce((sum, txn) => sum + txn.rewardPoints, 0);
-
-              rewardMonthlyData[cacheKey] = {
-                customerId: eachTransaction.customerId,
-                customerName: eachTransaction.customerName,
-                month: month,
-                year: year,
-                rewardPoints: monthlyPoints,
-              };
-
-              uniqueRewards.push(rewardMonthlyData[cacheKey]);
-            }
-
-            return uniqueRewards;
-          },[]);
-
-
-        //Calculating quarterly rewards for every customer
+        
+        const monthlyRewards = {};
         const quarterlyRewards = {};
         updatedTransactions.map((eachTransaction) => {
           const date = new Date(eachTransaction.purchaseDate);
+          const month = new Date(eachTransaction.purchaseDate).toLocaleString("default",{ month: "long" });
+          const monthKey = `${eachTransaction.customerName}-${date.getFullYear()}-${month}`;
           const quarterKey = `${eachTransaction.customerName}-${date.getFullYear()}-Q${Math.ceil((date.getMonth() + 1) / 3)}`;
-          quarterlyRewards[quarterKey] =
-            (quarterlyRewards[quarterKey] || 0) + eachTransaction.rewardPoints;
+          monthlyRewards[monthKey] = (monthlyRewards[monthKey] || 0) + eachTransaction.rewardPoints;
+          quarterlyRewards[quarterKey] = (quarterlyRewards[quarterKey] || 0) + eachTransaction.rewardPoints;
         });
+
+        const monthlyRewardsTable = Object.entries(monthlyRewards).map(([key, rewardPoints]) => {
+            const [customerName, year, month] = key.split('-');
+            return {
+              customerName,
+              year,
+              month,
+              rewardPoints,
+            };
+          });
 
         const quarterlyRewardsTable = Object.entries(quarterlyRewards).map(([key, rewardPoints]) => {
             const [customerName, year, quarter] = key.split("-");
@@ -87,7 +66,7 @@ const RewardsProgram = () => {
 
         //Updating the updated values in state variables
         setTransactions(updatedTransactions);
-        setMonthlyRewards(updatedMonthlyRewards);
+        setMonthlyRewards(monthlyRewardsTable);
         setTotalRewards(quarterlyRewardsTable);
         setLoading(false);
       } catch (e) {
