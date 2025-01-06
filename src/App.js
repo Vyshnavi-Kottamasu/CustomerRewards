@@ -1,11 +1,10 @@
-import './App.css';
 import React from 'react';
-import RewardsList from './utils/RewardsList/RewardsList'
+import RewardsProgram from './utils/RewardsProgram/RewardsProgram.jsx';
 
 function App() {
   return (
     <div className="App">
-      <RewardsList />
+      <RewardsProgram />
     </div>
   );
 }
