@@ -1,10 +1,74 @@
 [
-    { "transactionId": 1, "customerId": 1, "customerName": "John Doe", "purchaseDate": "2024-01-15", "productPurchased": "Laptop", "price": 120, "rewardPoints": 0 },                
-    { "transactionId": 2, "customerId": 2, "customerName": "Jane Smith", "purchaseDate": "2024-01-20", "productPurchased": "Phone", "price": 85, "rewardPoints": 0 },
-    { "transactionId": 3, "customerId": 2, "customerName": "Jane Smith", "purchaseDate": "2024-01-10", "productPurchased": "Tablet", "price": 200, "rewardPoints": 0 }, 
-    { "transactionId": 4, "customerId": 1, "customerName": "John Doe", "purchaseDate": "2024-02-20", "productPurchased": "Phone", "price": 110, "rewardPoints": 0 },
-    { "transactionId": 5, "customerId": 1, "customerName": "John Doe", "purchaseDate": "2024-02-21", "productPurchased": "Phone", "price": 51, "rewardPoints": 0 },  
-    { "transactionId": 6, "customerId": 2, "customerName": "Jane Smith", "purchaseDate": "2024-03-12", "productPurchased": "Phone", "price": 70, "rewardPoints": 0 },
-    { "transactionId": 7, "customerId": 1, "customerName": "John Doe", "purchaseDate": "2024-03-26", "productPurchased": "Phone", "price": 60.2, "rewardPoints": 0 },   
-    { "transactionId": 8, "customerId": 1, "customerName": "John Doe", "purchaseDate": "2025-01-22", "productPurchased": "Phone", "price": 70.5, "rewardPoints": 0 }
+  {
+    "transactionId": 1,
+    "customerId": 1,
+    "customerName": "John Doe",
+    "purchaseDate": "2024-01-15",
+    "productPurchased": "Laptop",
+    "price": 120,
+    "rewardPoints": 0
+  },
+  {
+    "transactionId": 2,
+    "customerId": 2,
+    "customerName": "Jane Smith",
+    "purchaseDate": "2024-01-20",
+    "productPurchased": "Phone",
+    "price": "a",
+    "rewardPoints": 0
+  },
+  {
+    "transactionId": 3,
+    "customerId": 2,
+    "customerName": "Jane Smith",
+    "purchaseDate": "2024-01-10",
+    "productPurchased": "Tablet",
+    "price": 200,
+    "rewardPoints": 0
+  },
+  {
+    "transactionId": 4,
+    "customerId": 1,
+    "customerName": "John Doe",
+    "purchaseDate": "2024-02-20",
+    "productPurchased": "Phone",
+    "price": 110,
+    "rewardPoints": 0
+  },
+  {
+    "transactionId": 5,
+    "customerId": 1,
+    "customerName": "John Doe",
+    "purchaseDate": "2024-02-21",
+    "productPurchased": "Phone",
+    "price": 51,
+    "rewardPoints": 0
+  },
+  {
+    "transactionId": 6,
+    "customerId": 2,
+    "customerName": "Jane Smith",
+    "purchaseDate": "2024-03-12",
+    "productPurchased": "Phone",
+    "price": 70,
+    "rewardPoints": 0
+  },
+  {
+    "transactionId": 7,
+    "customerId": 1,
+    "customerName": "John Doe",
+    "purchaseDate": "2024-03-26",
+    "productPurchased": "Phone",
+    "price": 60.2,
+    "rewardPoints": 0
+  },
+  {
+    "transactionId": 8,
+    "customerId": 1,
+    "customerName": "John Doe",
+    "purchaseDate": "2025-01-22",
+    "productPurchased": "Phone",
+    "price": null,
+    "rewardPoints": 0
+  }
 ]

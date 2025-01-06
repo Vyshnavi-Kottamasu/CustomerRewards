@@ -17,22 +17,17 @@
     "build": "react-scripts build",
     "test": "jest",
     "eject": "react-scripts eject",
-    "lint": "eslint . --fix && prettier --write ."
-  },
-  "jest": {
-    "testEnvironment": "jsdom"
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix",
+    "format": "prettier --write ."
   },
   "eslintConfig": {
     "env": {
       "browser": true,
-      "es2021": true,
       "jest": true,
       "node": true
     },
     "extends": [
-      "eslint:recommended",
-      "plugin:react/recommended",
-      "plugin:jest/recommended",
       "react-app",
       "react-app/jest"
     ],
@@ -58,15 +53,22 @@
     ]
   },
   "devDependencies": {
+    "@babel/core": "^7.26.0",
+    "@babel/preset-env": "^7.26.0",
+    "@babel/preset-react": "^7.26.3",
     "@eslint/js": "^9.17.0",
     "@testing-library/jest-dom": "^6.6.3",
     "@testing-library/react": "^16.1.0",
+    "@testing-library/user-event": "^13.5.0",
     "@types/jest": "^29.5.14",
+    "@types/react": "^18.3.1",
+    "@types/react-dom": "^18.3.0",
+    "babel-jest": "^29.7.0",
     "eslint": "^8.57.1",
+    "eslint-config-airbnb": "^19.0.4",
     "eslint-config-prettier": "^9.1.0",
     "eslint-plugin-prettier": "^5.2.1",
     "eslint-plugin-react": "^7.37.3",
-    "eslint-plugin-testing-library": "^7.1.1",
     "globals": "^15.14.0",
     "jest": "^27.5.1",
     "prettier": "^3.4.2"
