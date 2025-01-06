@@ -8,6 +8,7 @@ const RewardsContent = ({
   monthlyRewards,
   quarterlyRewards,
 }) => {
+  //creating a dataMapping object where the 'activeTab' serves as the key, and the corresponding values contain the 'columnNames' and 'data' for each table displayed on the screen.
   const dataMapping = {
     1: {
       columns: [
@@ -31,7 +32,7 @@ const RewardsContent = ({
     },
   };
 
-  const { columns, data } = dataMapping[activeTab] || {};
+  const { columns, data } = dataMapping[activeTab] || {}; //dataMapping details are mapped to columns array and data array based on the 'activeTab' value
 
   if (!columns || !data) return null;
 
@@ -39,10 +40,10 @@ const RewardsContent = ({
 };
 
 RewardsContent.propTypes = {
-  activeTab: PropTypes.number.isRequired, // Fixed type
+  activeTab: PropTypes.number.isRequired,
   transactions: PropTypes.array.isRequired,
   monthlyRewards: PropTypes.array.isRequired,
-  quarterlyRewards: PropTypes.array.isRequired, // Corrected from `func` to `array`
+  quarterlyRewards: PropTypes.array.isRequired,
 };
 
 export default RewardsContent;

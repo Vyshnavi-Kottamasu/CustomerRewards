@@ -5,7 +5,7 @@ import Loading from '../../components/Loading.jsx';
 import TabButtons from '../../components/TabButton.jsx';
 import RewardsContent from '../RewardsContent/RewardsContent.jsx';
 
-//Main function
+//main function
 const RewardsProgram = () => {
   const [monthlyRewards, setMonthlyRewards] = useState();
   const [quarterlyRewards, setQuarterlyRewards] = useState([]);
@@ -19,7 +19,7 @@ const RewardsProgram = () => {
     { id: 3, label: 'Quarterly Rewards' },
   ];
 
-  //Loading the data and storing it in state variables
+  //loading the data and storing it in state variables
   useEffect(() => {
     const loadData = async () => {
       try {
@@ -30,7 +30,7 @@ const RewardsProgram = () => {
           quarterlyRewardsTable,
         } = await fetchRewardsData();
 
-        //Updating the updated values in state variables
+        //updating the updated values in state variables
         setTransactions(updatedTransactions);
         setMonthlyRewards(monthlyRewardsTable);
         setQuarterlyRewards(quarterlyRewardsTable);
