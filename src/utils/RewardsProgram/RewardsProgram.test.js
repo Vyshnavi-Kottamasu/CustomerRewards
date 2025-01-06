@@ -70,9 +70,15 @@ describe('RewardsProgram Component', () => {
     });
 
     // Check if the transaction data is rendered
-    expect(screen.getByText('Transactions: [{"id":1,"amount":100}]')).toBeInTheDocument();
-    expect(screen.getByText('Monthly Rewards: [{"month":"January","points":200}]')).toBeInTheDocument();
-    expect(screen.getByText('Quarterly Rewards: [{"quarter":"Q1","points":600}]')).toBeInTheDocument();
+    expect(
+      screen.getByText('Transactions: [{"id":1,"amount":100}]')
+    ).toBeInTheDocument();
+    expect(
+      screen.getByText('Monthly Rewards: [{"month":"January","points":200}]')
+    ).toBeInTheDocument();
+    expect(
+      screen.getByText('Quarterly Rewards: [{"quarter":"Q1","points":600}]')
+    ).toBeInTheDocument();
   });
 
   test('should calculate points correctly based on price', () => {
