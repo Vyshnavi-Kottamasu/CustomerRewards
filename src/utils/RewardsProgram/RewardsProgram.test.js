@@ -5,6 +5,35 @@ import { expect, jest, test, describe, afterEach } from '@jest/globals';
 import RewardsProgram from './RewardsProgram';
 import { calculatePoints } from '../reward.js';
 
+// Mocking the fetchRewardsData function
+jest.mock('../reward', () => ({
+  fetchRewardsData: jest.fn(),
+}));
+
+// Mocking the Loading component
+jest.mock('../../components/Loading', () => {
+  const MockLoading = () => <div>Loading...</div>;
+  MockLoading.displayName = 'MockLoading';
+  return MockLoading;
+});
+
+// Mocking the RewardsContent component
+jest.mock(
+  '../RewardsContent/RewardsContent',
+  () =>
+    ({ transactions, monthlyRewards, quarterlyRewards }) => {
+      const MockRewardTables = () => (
+        <div>
+          <p>Transactions: {JSON.stringify(transactions)}</p>
+          <p>Monthly Rewards: {JSON.stringify(monthlyRewards)}</p>
+          <p>Quarterly Rewards: {JSON.stringify(quarterlyRewards)}</p>
+        </div>
+      );
+      MockRewardTables.displayName = 'MockRewardTables';
+      return MockRewardTables;
+    }
+);
+
 describe('RewardsProgram Component', () => {
   afterEach(() => {
     jest.clearAllMocks();
@@ -41,15 +70,9 @@ describe('RewardsProgram Component', () => {
     });
 
     // Check if the transaction data is rendered
-    expect(
-      screen.getByText('Transactions: [{"id":1,"amount":100}]')
-    ).toBeInTheDocument();
-    expect(
-      screen.getByText('Monthly Rewards: [{"month":"January","points":200}]')
-    ).toBeInTheDocument();
-    expect(
-      screen.getByText('Quarterly Rewards: [{"quarter":"Q1","points":600}]')
-    ).toBeInTheDocument();
+    expect(screen.getByText('Transactions: [{"id":1,"amount":100}]')).toBeInTheDocument();
+    expect(screen.getByText('Monthly Rewards: [{"month":"January","points":200}]')).toBeInTheDocument();
+    expect(screen.getByText('Quarterly Rewards: [{"quarter":"Q1","points":600}]')).toBeInTheDocument();
   });
 
   test('should calculate points correctly based on price', () => {
