@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import './DataTable.css';
 
 const DataTable = ({ columns, details }) => {
   if (!columns || !details || !details.length) {

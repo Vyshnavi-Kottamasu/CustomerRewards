@@ -1,5 +1,5 @@
 import React from 'react';
-import RewardsProgram from './utils/RewardsProgram/RewardsProgram.jsx';
+import RewardsProgram from './components/RewardsProgram/RewardsProgram.jsx';
 
 function App() {
   return (

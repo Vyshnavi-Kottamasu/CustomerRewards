@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import DataTable from '../../components/DataTable';
+import DataTable from './DataTable/DataTable';
 
 const RewardsContent = ({
   activeTab,

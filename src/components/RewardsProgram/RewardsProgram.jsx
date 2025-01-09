@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import log from 'loglevel';
-import { fetchRewardsData } from '../reward.js';
-import Loading from '../../components/Loading.jsx';
-import TabButtons from '../../components/TabButton.jsx';
-import RewardsContent from '../RewardsContent/RewardsContent.jsx';
+import { fetchRewardsData } from '../../utils/reward.js';
+import Loading from '../Loading.jsx';
+import TabButtons from '../TabButton/TabButton.jsx';
+import RewardsContent from '../RewardsContent.jsx';
+import './RewardsProgram.css';
 
 //main function
 const RewardsProgram = () => {
@@ -45,23 +46,31 @@ const RewardsProgram = () => {
   }, []);
 
   if (loading) {
-    return <Loading />;
+    return (
+      <div className="loading-container">
+        <Loading />
+      </div>
+    );
   }
 
   return (
-    <div>
+    <div className="rewards-program-container">
       <h1>Customer Rewards Program</h1>
-      <TabButtons
-        tabs={tabs}
-        activeTab={activeTab}
-        onTabChange={setActiveTab}
-      />
-      <RewardsContent
-        activeTab={activeTab}
-        transactions={transactions}
-        monthlyRewards={monthlyRewards}
-        quarterlyRewards={quarterlyRewards}
-      />
+      <div className="tab-buttons-container">
+        <TabButtons
+          tabs={tabs}
+          activeTab={activeTab}
+          onTabChange={setActiveTab}
+        />
+      </div>
+      <div className="rewards-content">
+        <RewardsContent
+          activeTab={activeTab}
+          transactions={transactions}
+          monthlyRewards={monthlyRewards}
+          quarterlyRewards={quarterlyRewards}
+        />
+      </div>
     </div>
   );
 };
