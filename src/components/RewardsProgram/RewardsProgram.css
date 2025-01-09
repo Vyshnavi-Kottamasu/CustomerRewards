@@ -1,0 +1,58 @@
+/* Styles for the main container */
+.rewards-program-container {
+  font-family: Arial, sans-serif;
+  margin: 20px;
+  padding: 20px;
+  border-radius: 8px;
+}
+
+/* Header styles */
+.rewards-program-container h1 {
+  font-size: 24px;
+  color: #333;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+/* Styles for tab buttons */
+.tab-buttons-container {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.tab-button {
+  padding: 10px 20px;
+  margin: 0 5px;
+  border: none;
+  background-color: #e0e0e0;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+  color: #333;
+}
+
+.tab-button:hover {
+  background-color: #ccc;
+}
+
+.tab-button.active {
+  background-color: #007bff;
+  color: white;
+  font-weight: bold;
+}
+
+/* Loading spinner styles */
+.loading-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 300px;
+  font-size: 18px;
+  color: #007bff;
+}
+
+/* Content area styles */
+.rewards-content {
+  margin-top: 20px;
+}

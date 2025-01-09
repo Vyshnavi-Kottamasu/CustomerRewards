@@ -1,11 +1,16 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import './TabButton.css';
 
 const TabButtons = ({ tabs, onTabChange }) => {
   return (
-    <div>
+    <div className="tab-buttons-container">
       {tabs.map((tab) => (
-        <button key={tab.id} onClick={() => onTabChange(tab.id)}>
+        <button
+          key={tab.id}
+          className="tab-button"
+          onClick={() => onTabChange(tab.id)}
+        >
           {tab.label}
         </button>
       ))}

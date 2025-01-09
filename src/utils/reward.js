@@ -1,15 +1,10 @@
 //calculate points based on transaction amount
 export const calculatePoints = (amt) => {
-  let points = 0;
-  let amount = Math.round(amt);
-  if (amount > 100) {
-    points = 2 * (amount - 100);
-    amount = 100;
-  }
-  if (amount > 50) {
-    points += amount - 50;
-  }
-  return points;
+  const amount = Math.round(amt);
+  if (amount <= 50) return 0;
+  const pointsAbove50 = amount - 50;
+  const pointsAbove100 = Math.max(0, amount - 100);
+  return pointsAbove50 + pointsAbove100;
 };
 
 export const fetchRewardsData = async () => {
@@ -22,21 +17,23 @@ export const fetchRewardsData = async () => {
     return { ...transaction, rewardPoints: points };
   });
 
-  const monthlyRewards = {};
-  const quarterlyRewards = {};
-
   //monthlyRewards and quarterlyRewards are the objects that have multiple keys where each key represents a row data and its value represents the reward points
-  updatedTransactions.forEach((transaction) => {
-    const date = new Date(transaction.purchaseDate);
-    const month = date.toLocaleString('default', { month: 'long' });
-    const monthKey = `${transaction.customerName}-${date.getFullYear()}-${month}`; //unique key that contains all the row details to be displayed
-    const quarterKey = `${transaction.customerName}-${date.getFullYear()}-Q${Math.ceil((date.getMonth() + 1) / 3)}`; //unique key that contains all the row details to be displayed
+  const { monthlyRewards, quarterlyRewards } = updatedTransactions.reduce(
+    (acc, transaction) => {
+      const date = new Date(transaction.purchaseDate);
+      const month = date.toLocaleString('default', { month: 'long' });
+      const monthKey = `${transaction.customerName}-${date.getFullYear()}-${month}`;
+      const quarterKey = `${transaction.customerName}-${date.getFullYear()}-Q${Math.ceil((date.getMonth() + 1) / 3)}`;
 
-    monthlyRewards[monthKey] =
-      (monthlyRewards[monthKey] || 0) + transaction.rewardPoints; //Sum of reward points based on monthly basis
-    quarterlyRewards[quarterKey] =
-      (quarterlyRewards[quarterKey] || 0) + transaction.rewardPoints; //Sum of reward points based on quarterly basis
-  });
+      acc.monthlyRewards[monthKey] =
+        (acc.monthlyRewards[monthKey] || 0) + transaction.rewardPoints;
+      acc.quarterlyRewards[quarterKey] =
+        (acc.quarterlyRewards[quarterKey] || 0) + transaction.rewardPoints;
+
+      return acc;
+    },
+    { monthlyRewards: {}, quarterlyRewards: {} }
+  );
 
   //transforming the monthlyRewards into a 2D array, extracting the details and adding them to monthlyRewardsTable
   const monthlyRewardsTable = Object.entries(monthlyRewards).map(
