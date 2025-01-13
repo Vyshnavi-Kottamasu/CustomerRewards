@@ -1,5 +1,8 @@
+import dateHelper from './dateHelper';
+
 //calculate points based on transaction amount
 export const calculatePoints = (amt) => {
+  if (isNaN(amt)) return '';
   const amount = Math.round(amt);
   if (amount <= 50) return 0;
   const pointsAbove50 = amount - 50;
@@ -11,6 +14,13 @@ export const fetchRewardsData = async () => {
   const response = await fetch('/data/transactions.json'); // fetching data
   const transactionsData = await response.json();
 
+  const currentDate = new Date();
+  const threeMonthsAgo = new Date(
+    currentDate.getFullYear(),
+    currentDate.getMonth() - 2,
+    1
+  );
+
   //updatedTransactions contains the details of the whole transaction table along with the calculated reward points
   const updatedTransactions = transactionsData.map((transaction) => {
     const points = calculatePoints(transaction.price);
@@ -18,22 +28,36 @@ export const fetchRewardsData = async () => {
   });
 
   //monthlyRewards and quarterlyRewards are the objects that have multiple keys where each key represents a row data and its value represents the reward points
-  const { monthlyRewards, quarterlyRewards } = updatedTransactions.reduce(
+  const { monthlyRewards } = updatedTransactions.reduce(
     (acc, transaction) => {
-      const date = new Date(transaction.purchaseDate);
-      const month = date.toLocaleString('default', { month: 'long' });
-      const monthKey = `${transaction.customerName}-${date.getFullYear()}-${month}`;
-      const quarterKey = `${transaction.customerName}-${date.getFullYear()}-Q${Math.ceil((date.getMonth() + 1) / 3)}`;
+      const transactionDate = dateHelper.parseDate(transaction.purchaseDate);
+      const month = dateHelper.getMonth(transactionDate);
+      const monthKey = `${transaction.customerName}-${transactionDate.getFullYear()}-${month}`;
 
       acc.monthlyRewards[monthKey] =
-        (acc.monthlyRewards[monthKey] || 0) + transaction.rewardPoints;
-      acc.quarterlyRewards[quarterKey] =
-        (acc.quarterlyRewards[quarterKey] || 0) + transaction.rewardPoints;
+        (acc.monthlyRewards[monthKey] || 0) +
+        (isNaN(transaction.price) ? 0 : transaction.rewardPoints);
 
       return acc;
     },
-    { monthlyRewards: {}, quarterlyRewards: {} }
+    { monthlyRewards: {} }
   );
+
+  // Quarterly rewards logic updated to consider only last 3 months
+  const quarterlyRewards = updatedTransactions
+    .filter((transaction) => {
+      const transactionDate = dateHelper.parseDate(transaction.purchaseDate);
+      return (
+        transactionDate >= threeMonthsAgo && transactionDate <= currentDate
+      );
+    })
+    .reduce((acc, transaction) => {
+      const customerKey = transaction.customerName; // Group by customer
+      acc[customerKey] =
+        (acc[customerKey] || 0) +
+        (isNaN(transaction.price) ? 0 : transaction.rewardPoints);
+      return acc;
+    }, {});
 
   //transforming the monthlyRewards into a 2D array, extracting the details and adding them to monthlyRewardsTable
   const monthlyRewardsTable = Object.entries(monthlyRewards).map(
@@ -45,9 +69,8 @@ export const fetchRewardsData = async () => {
 
   //transforming the quarterlyRewards into a 2D array, extracting the details, and adding them to quarterlyRewardsTable.
   const quarterlyRewardsTable = Object.entries(quarterlyRewards).map(
-    ([key, rewardPoints]) => {
-      const [customerName, year, quarter] = key.split('-');
-      return { customerName, year, quarter, rewardPoints };
+    ([customerName, rewardPoints]) => {
+      return { customerName, rewardPoints };
     }
   );
 

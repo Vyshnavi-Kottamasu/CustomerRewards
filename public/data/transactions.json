@@ -66,18 +66,9 @@
     "transactionId": 8,
     "customerId": 1,
     "customerName": "John Doe",
-    "purchaseDate": "2025-01-22",
+    "purchaseDate": "2025-01-11",
     "productPurchased": "Phone",
     "price": null,
-    "rewardPoints": 0
-  },
-  {
-    "transactionId": 9,
-    "customerId": 1,
-    "customerName": "John Doe",
-    "purchaseDate": "2025-04-28",
-    "productPurchased": "Monitor",
-    "price": 237.87,
     "rewardPoints": 0
   },
   {
@@ -99,15 +90,6 @@
     "rewardPoints": 0
   },
   {
-    "transactionId": 12,
-    "customerId": 2,
-    "customerName": "Jane Smith",
-    "purchaseDate": "2025-05-19",
-    "productPurchased": "Monitor",
-    "price": 358.2,
-    "rewardPoints": 0
-  },
-  {
     "transactionId": 13,
     "customerId": 4,
     "customerName": "Bob Brown",
@@ -117,19 +99,10 @@
     "rewardPoints": 0
   },
   {
-    "transactionId": 14,
-    "customerId": 4,
-    "customerName": "Bob Brown",
-    "purchaseDate": "2025-07-13",
-    "productPurchased": "Tablet",
-    "price": 42.61,
-    "rewardPoints": 0
-  },
-  {
     "transactionId": 15,
     "customerId": 1,
     "customerName": "John Doe",
-    "purchaseDate": "2025-06-21",
+    "purchaseDate": "2025-01-12",
     "productPurchased": "Headphones",
     "price": 166.65,
     "rewardPoints": 0
@@ -183,7 +156,7 @@
     "transactionId": 21,
     "customerId": 2,
     "customerName": "Jane Smith",
-    "purchaseDate": "2025-11-20",
+    "purchaseDate": "2025-01-06",
     "productPurchased": "Phone",
     "price": 187.69,
     "rewardPoints": 0
@@ -210,18 +183,9 @@
     "transactionId": 24,
     "customerId": 4,
     "customerName": "Bob Brown",
-    "purchaseDate": "2025-07-11",
+    "purchaseDate": "2025-01-11",
     "productPurchased": "Monitor",
     "price": 263.78,
-    "rewardPoints": 0
-  },
-  {
-    "transactionId": 25,
-    "customerId": 3,
-    "customerName": "Alice Johnson",
-    "purchaseDate": "2025-08-05",
-    "productPurchased": "Monitor",
-    "price": 359.71,
     "rewardPoints": 0
   },
   {
@@ -246,7 +210,7 @@
     "transactionId": 28,
     "customerId": 1,
     "customerName": "John Doe",
-    "purchaseDate": "2025-07-07",
+    "purchaseDate": "2025-01-05",
     "productPurchased": "Tablet",
     "price": 135.04,
     "rewardPoints": 0
@@ -255,7 +219,7 @@
     "transactionId": 29,
     "customerId": 3,
     "customerName": "Alice Johnson",
-    "purchaseDate": "2025-03-15",
+    "purchaseDate": "2025-01-12",
     "productPurchased": "Phone",
     "price": 149.6,
     "rewardPoints": 0
@@ -342,15 +306,6 @@
     "rewardPoints": 0
   },
   {
-    "transactionId": 39,
-    "customerId": 4,
-    "customerName": "Bob Brown",
-    "purchaseDate": "2025-09-03",
-    "productPurchased": "Headphones",
-    "price": 309.25,
-    "rewardPoints": 0
-  },
-  {
     "transactionId": 40,
     "customerId": 2,
     "customerName": "Jane Smith",
@@ -387,15 +342,6 @@
     "rewardPoints": 0
   },
   {
-    "transactionId": 44,
-    "customerId": 3,
-    "customerName": "Alice Johnson",
-    "purchaseDate": "2025-06-11",
-    "productPurchased": "Laptop",
-    "price": 429.86,
-    "rewardPoints": 0
-  },
-  {
     "transactionId": 45,
     "customerId": 2,
     "customerName": "Jane Smith",
@@ -408,7 +354,7 @@
     "transactionId": 46,
     "customerId": 1,
     "customerName": "John Doe",
-    "purchaseDate": "2025-02-08",
+    "purchaseDate": "2025-01-08",
     "productPurchased": "Tablet",
     "price": 409.65,
     "rewardPoints": 0
@@ -468,19 +414,10 @@
     "rewardPoints": 0
   },
   {
-    "transactionId": 53,
-    "customerId": 2,
-    "customerName": "Jane Smith",
-    "purchaseDate": "2025-12-14",
-    "productPurchased": "Tablet",
-    "price": 237.39,
-    "rewardPoints": 0
-  },
-  {
     "transactionId": 54,
     "customerId": 4,
     "customerName": "Bob Brown",
-    "purchaseDate": "2025-06-14",
+    "purchaseDate": "2025-01-12",
     "productPurchased": "Headphones",
     "price": 95.84,
     "rewardPoints": 0
@@ -498,7 +435,7 @@
     "transactionId": 56,
     "customerId": 4,
     "customerName": "Bob Brown",
-    "purchaseDate": "2025-02-17",
+    "purchaseDate": "2025-01-10",
     "productPurchased": "Headphones",
     "price": 197.59,
     "rewardPoints": 0
@@ -519,15 +456,6 @@
     "purchaseDate": "2023-02-08",
     "productPurchased": "Tablet",
     "price": 494.85,
-    "rewardPoints": 0
-  },
-  {
-    "transactionId": 59,
-    "customerId": 2,
-    "customerName": "Jane Smith",
-    "purchaseDate": "2025-07-17",
-    "productPurchased": "Tablet",
-    "price": 325.28,
     "rewardPoints": 0
   },
   {
@@ -603,15 +531,6 @@
     "rewardPoints": 0
   },
   {
-    "transactionId": 68,
-    "customerId": 1,
-    "customerName": "John Doe",
-    "purchaseDate": "2025-10-26",
-    "productPurchased": "Laptop",
-    "price": 302.83,
-    "rewardPoints": 0
-  },
-  {
     "transactionId": 69,
     "customerId": 3,
     "customerName": "Alice Johnson",
@@ -630,15 +549,6 @@
     "rewardPoints": 0
   },
   {
-    "transactionId": 71,
-    "customerId": 5,
-    "customerName": "Charlie White",
-    "purchaseDate": "2025-06-29",
-    "productPurchased": "Laptop",
-    "price": 129.1,
-    "rewardPoints": 0
-  },
-  {
     "transactionId": 72,
     "customerId": 4,
     "customerName": "Bob Brown",
@@ -654,15 +564,6 @@
     "purchaseDate": "2024-11-29",
     "productPurchased": "Headphones",
     "price": 41.1,
-    "rewardPoints": 0
-  },
-  {
-    "transactionId": 74,
-    "customerId": 2,
-    "customerName": "Jane Smith",
-    "purchaseDate": "2025-06-11",
-    "productPurchased": "Monitor",
-    "price": 116.87,
     "rewardPoints": 0
   },
   {
@@ -693,24 +594,6 @@
     "rewardPoints": 0
   },
   {
-    "transactionId": 78,
-    "customerId": 1,
-    "customerName": "John Doe",
-    "purchaseDate": "2025-12-22",
-    "productPurchased": "Monitor",
-    "price": 114.38,
-    "rewardPoints": 0
-  },
-  {
-    "transactionId": 79,
-    "customerId": 2,
-    "customerName": "Jane Smith",
-    "purchaseDate": "2025-06-09",
-    "productPurchased": "Monitor",
-    "price": 267.33,
-    "rewardPoints": 0
-  },
-  {
     "transactionId": 80,
     "customerId": 5,
     "customerName": "Charlie White",
@@ -723,7 +606,7 @@
     "transactionId": 81,
     "customerId": 2,
     "customerName": "Jane Smith",
-    "purchaseDate": "2025-04-03",
+    "purchaseDate": "2025-01-03",
     "productPurchased": "Laptop",
     "price": 320.65,
     "rewardPoints": 0
@@ -756,15 +639,6 @@
     "rewardPoints": 0
   },
   {
-    "transactionId": 85,
-    "customerId": 1,
-    "customerName": "John Doe",
-    "purchaseDate": "2025-08-12",
-    "productPurchased": "Headphones",
-    "price": 210.06,
-    "rewardPoints": 0
-  },
-  {
     "transactionId": 86,
     "customerId": 1,
     "customerName": "John Doe",
@@ -792,15 +666,6 @@
     "rewardPoints": 0
   },
   {
-    "transactionId": 89,
-    "customerId": 1,
-    "customerName": "John Doe",
-    "purchaseDate": "2025-04-15",
-    "productPurchased": "Headphones",
-    "price": 288.64,
-    "rewardPoints": 0
-  },
-  {
     "transactionId": 90,
     "customerId": 4,
     "customerName": "Bob Brown",
@@ -813,7 +678,7 @@
     "transactionId": 91,
     "customerId": 4,
     "customerName": "Bob Brown",
-    "purchaseDate": "2025-11-01",
+    "purchaseDate": "2025-01-01",
     "productPurchased": "Monitor",
     "price": 29.34,
     "rewardPoints": 0
@@ -822,7 +687,7 @@
     "transactionId": 92,
     "customerId": 3,
     "customerName": "Alice Johnson",
-    "purchaseDate": "2025-03-21",
+    "purchaseDate": "2025-01-09",
     "productPurchased": "Laptop",
     "price": 353.35,
     "rewardPoints": 0
@@ -840,7 +705,7 @@
     "transactionId": 94,
     "customerId": 3,
     "customerName": "Alice Johnson",
-    "purchaseDate": "2025-09-11",
+    "purchaseDate": "2025-01-11",
     "productPurchased": "Monitor",
     "price": 45.35,
     "rewardPoints": 0
@@ -912,7 +777,7 @@
     "transactionId": 102,
     "customerId": 3,
     "customerName": "Alice Johnson",
-    "purchaseDate": "2025-02-27",
+    "purchaseDate": "2025-01-07",
     "productPurchased": "Laptop",
     "price": 172.54,
     "rewardPoints": 0
@@ -936,30 +801,12 @@
     "rewardPoints": 0
   },
   {
-    "transactionId": 105,
-    "customerId": 1,
-    "customerName": "John Doe",
-    "purchaseDate": "2025-10-26",
-    "productPurchased": "Monitor",
-    "price": 339.79,
-    "rewardPoints": 0
-  },
-  {
     "transactionId": 106,
     "customerId": 5,
     "customerName": "Charlie White",
     "purchaseDate": "2024-10-13",
     "productPurchased": "Monitor",
     "price": 239.46,
-    "rewardPoints": 0
-  },
-  {
-    "transactionId": 107,
-    "customerId": 2,
-    "customerName": "Jane Smith",
-    "purchaseDate": "2025-03-28",
-    "productPurchased": "Headphones",
-    "price": 202.75,
     "rewardPoints": 0
   },
   {
