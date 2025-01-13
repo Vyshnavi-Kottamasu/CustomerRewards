@@ -27,7 +27,7 @@ const RewardsContent = ({
       data: monthlyRewards,
     },
     3: {
-      columns: ['customerName', 'year', 'quarter', 'rewardPoints'],
+      columns: ['customerName', 'rewardPoints'],
       data: quarterlyRewards,
     },
   };

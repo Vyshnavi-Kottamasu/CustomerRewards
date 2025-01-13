@@ -69,11 +69,34 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
 
-Project explaination:
+Rewards Calculation System:
+This project calculates customer reward points based on their transactions and provides insights into monthly and quarterly rewards.
 
-1. Calculate the reward points for every transaction and update it in the transaction array(state variable).
-2. Calculate reward points on monthly basis and quarterly basis by inserting the key value pairs into an empty object. Key being the unique value that contains all the details and value being the reward points.
-3. Create Tabs and RewardContent Component where RewardContent invokes the DataTable Component by passing the details of the tab selected by the users and its respective data.
-4. Installed prop-types for prop validation and ESLint for code formatting
-5. Make sure to follow the best practices mentioned.
-6. Write test cases using jest
+Features:
+Transaction-Based Reward Calculation: Calculates reward points based on transaction amounts.
+Monthly Rewards: Displays reward points for each customer per month.
+Quarterly Rewards: Displays the total reward points for each customer over the last three months.
+
+Process:
+
+1. Calculate the reward points for each transaction and update it in the transaction array(state variable). The reward calculation is based on the following rules:
+   =>No points for amounts ≤ $50.
+   =>1 point for every dollar spent above $50.
+   =>An additional 1 point for every dollar spent above $100.
+
+2. Compute reward points on a monthly and quarterly basis by populating an empty object with key-value pairs. The 'key' represents a unique identifier containing all customer details to be displayed in the table, while the 'value' holds the reward points.
+
+Below are few variables used in fetchRewardsData():
+=>updatedTransactions: List of all transactions with reward points.
+=>Monthly Rewards: Total rewards per customer per month.
+=>Quarterly Rewards: Total rewards for the last three months, grouped by customer.
+=>monthlyRewardsTable: Array of monthly rewards.
+=>quarterlyRewardsTable: Array of quarterly rewards for the last three months.
+
+3. Create a UI with 3 tabs, where each tab displays a different table. Clicking on a tab dynamically loads and displays the corresponding table content. Each tab is dedicated to one table, allowing users to switch between views seamlessly.
+
+4. Create a RewardContent component that dynamically renders the DataTable component. The RewardContent component passes the selected tab details and the corresponding data to the DataTable component based on the user's selection.
+
+5. Installed prop-types for prop validation and ESLint for code formatting.
+
+6. Test cases are written using Jest.
