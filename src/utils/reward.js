@@ -1,4 +1,5 @@
 import dateHelper from './dateHelper';
+import { fetchTransactionsData } from './services/rewardsService.js';
 
 //calculate points based on transaction amount
 export const calculatePoints = (amt) => {
@@ -11,8 +12,14 @@ export const calculatePoints = (amt) => {
 };
 
 export const fetchRewardsData = async () => {
-  const response = await fetch('/data/transactions.json'); // fetching data
-  const transactionsData = await response.json();
+  const transactionsData = await fetchTransactionsData();
+  if (!transactionsData) {
+    return {
+      updatedTransactions: [],
+      monthlyRewardsTable: [],
+      quarterlyRewardsTable: [],
+    };
+  }
 
   const currentDate = new Date();
   const threeMonthsAgo = new Date(

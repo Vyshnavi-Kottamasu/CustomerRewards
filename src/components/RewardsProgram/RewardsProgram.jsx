@@ -37,8 +37,12 @@ const RewardsProgram = () => {
         setQuarterlyRewards(quarterlyRewardsTable);
         setLoading(false);
       } catch (e) {
+        // Log the error for debugging
         log.error('Error fetching data:', e.message);
         log.error('Stack trace:', e.stack);
+      } finally {
+        // Ensure loading state is updated regardless of success or failure
+        setLoading(false);
       }
     };
 
