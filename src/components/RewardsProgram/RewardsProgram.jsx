@@ -40,7 +40,7 @@ const RewardsProgram = () => {
         // Log the error for debugging
         log.error('Error fetching data:', e.message);
         log.error('Stack trace:', e.stack);
-      }finally {
+      } finally {
         // Ensure loading state is updated regardless of success or failure
         setLoading(false);
       }
