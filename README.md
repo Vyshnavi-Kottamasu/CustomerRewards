@@ -100,3 +100,5 @@ Below are few variables used in fetchRewardsData():
 5. Installed prop-types for prop validation and ESLint for code formatting.
 
 6. Test cases are written using Jest.
+
+![alt text](<Transaction Table.png>) ![alt text](<Last Quarter Transaction.png>) ![alt text](<Monthly Transaction.png>)
